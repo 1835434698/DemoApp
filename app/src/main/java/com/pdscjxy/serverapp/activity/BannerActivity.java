@@ -13,6 +13,10 @@ import com.pdscjxy.serverapp.activity.base.BaseActivity;
 import com.pdscjxy.serverapp.fragment.BannerItemFragment;
 import com.pdscjxy.serverapp.util.PrefUtils;
 
+import butterknife.BindView;
+
+//import butterknife.Bind;
+
 
 /**
  * Created by Administrator on 2017/10/26.
@@ -20,7 +24,8 @@ import com.pdscjxy.serverapp.util.PrefUtils;
 
 public class BannerActivity extends BaseActivity{
 //    @Bind(R.id.mViewPager)
-    private ViewPager mViewPager;
+    @BindView(R.id.mViewPager)
+    ViewPager mViewPager;
     @Override
     protected void onCreate(Bundle bundle) {
         // TODO Auto-generated method stub
@@ -32,7 +37,7 @@ public class BannerActivity extends BaseActivity{
             finish();
         }
         setContentView(R.layout.activity_banner);
-        initView();
+//        initView();
         hideTitle();
         initAdapter();
     }
@@ -66,10 +71,10 @@ public class BannerActivity extends BaseActivity{
         });
     }
 
-    private void initView() {
-        // TODO Auto-generated method stub
-        mViewPager = (ViewPager) findViewById(R.id.mViewPager);
-    }
+//    private void initView() {
+//        // TODO Auto-generated method stub
+//        mViewPager = (ViewPager) findViewById(R.id.mViewPager);
+//    }
 
     public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         public ViewPagerAdapter(FragmentManager fm) {

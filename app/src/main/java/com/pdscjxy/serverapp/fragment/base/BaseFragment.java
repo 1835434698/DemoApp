@@ -11,18 +11,23 @@ import android.widget.LinearLayout;
 import com.pdscjxy.serverapp.R;
 import com.pdscjxy.serverapp.activity.base.BaseActivity;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 
 /**
  * Created by Administrator on 2017/10/26.
  */
 
 public class BaseFragment  extends Fragment {
+    private Unbinder unbinder;
     public View root;
 //    private LoadingView mLoadingView = null;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         root = inflater.inflate(R.layout.fragment_base, null);
+        unbinder = ButterKnife.bind(this,root);
         return root;
     }
 
@@ -32,10 +37,10 @@ public class BaseFragment  extends Fragment {
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
-
     //    /** 清除contentView里面的加载进度 */
 //    public void removeProgress() {
 //        if (mLoadingView != null&&root!=null) {

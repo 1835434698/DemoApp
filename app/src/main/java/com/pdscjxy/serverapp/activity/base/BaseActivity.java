@@ -23,8 +23,8 @@ import com.pdscjxy.serverapp.R;
 import com.pdscjxy.serverapp.permission.EasyPermissions;
 import com.pdscjxy.serverapp.util.Logger;
 import com.pdscjxy.serverapp.view.ProgressDialog;
-
 import java.util.List;
+import butterknife.ButterKnife;
 
 
 /**
@@ -35,12 +35,37 @@ public class BaseActivity extends AppCompatActivity implements IActivity, EasyPe
     private static final String TAG = "UIBaseActivity";
     public String BACK_BTN_TEXT = "backBtnText";
 
+// TODO: 2017/10/30
+//    /**单个View控件的绑定*/
+//    @BindView(R.id.btn_login)
+///**多个控件的绑定可以写在List或者Array中*/
+//    @BindViews({ R.id.first_name, R.id.middle_name, R.id.last_name })
+//    List<EditText> nameViews;
+//
+//    @BindString(R.string.title) String title;
+//    @BindDrawable(R.drawable.graphic) Drawable graphic;
+//    @BindColor(R.color.red) int red; // int or ColorStateList field
+//    @BindDimen(R.dimen.spacer) Float spacer; // int (for pixel size) or float (for exact value) field
+//@OnClick(R.id.submit)
+//public void submit(View view) {.
+//}
+//@OnClick(R.id.submit)
+//public void sayHi(Button button) {
+//    button.setText("Hello!");
+//}
+//@OnClick({R.id.submit,R.id.login})
+//public void sayHi(Button button) {
+//    button.setText("Hello!");
+//}
+
+    //    @Bind(R.id.sec_title_tv)
     private TextView mTitleView;
     // 标题栏左侧，右侧图标
+//    @Bind(R.id.title_left_img)
     private ImageView mLeftBtn;
 
+    //    @Bind(R.id.included_title)
     private LinearLayout titleLayout;
-
 
     public static final int REQUEST_CODE_CALLBACK = 0x1000;
     public static final String EXTRA_ACTIVITY_NAME = "_extra_activity_name";
@@ -50,9 +75,6 @@ public class BaseActivity extends AppCompatActivity implements IActivity, EasyPe
     public static final String TWO_LAYOUT = "TwoLayout";
 
 
-
-
-
     protected boolean isFirstLayout = true;
 
     private static final int DIALOG_WAIT = 102;
@@ -60,37 +82,6 @@ public class BaseActivity extends AppCompatActivity implements IActivity, EasyPe
     private static final int MSG_WHAT_HIDE_WAIT_DIALOG = 105;
     private String showMessage = "";
     private int dialogId = -1;
-
-
-//    public Handler fHandler = new Handler() {
-//        @Override
-//        public void handleMessage(Message msg) {
-//            switch (msg.what) {
-//                case MSG_WHAT_SHOW_WAIT_DIALOG:
-//                    if (!isFinishing()) {
-//                        if (dialogId == -1) {
-//                            dialogId = DIALOG_WAIT;
-//                            showDialog(DIALOG_WAIT);
-//                        }
-//                    }
-//
-//                    break;
-//                case MSG_WHAT_HIDE_WAIT_DIALOG: {
-//                    if (!isFinishing()) {
-//                        if (dialogId == DIALOG_WAIT) {
-//                            dialogId = -1;
-//                            try {
-//                                dismissDialog(DIALOG_WAIT);
-//                            } catch (Exception ignored) {
-//                            }
-//                        }
-//                    }
-//                }
-//                break;
-//            }
-//            super.handleMessage(msg);
-//        }
-//    };
 
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
@@ -102,6 +93,7 @@ public class BaseActivity extends AppCompatActivity implements IActivity, EasyPe
     protected void onDestroy() {
         // TODO Auto-generated method stub
         super.onDestroy();
+//        ButterKnife.unbind(this);
     }
 
     @Override
@@ -112,6 +104,7 @@ public class BaseActivity extends AppCompatActivity implements IActivity, EasyPe
             return;
         }
         setView(layoutResID);
+        ButterKnife.bind(this);
         initTitleBar();
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -126,6 +119,11 @@ public class BaseActivity extends AppCompatActivity implements IActivity, EasyPe
             window.setNavigationBarColor(Color.TRANSPARENT);
         }
     }
+
+//    @OnClick(R.id.title_left_img)
+//    void onBack() {
+//        finish();
+//    }
 
     /**
      * 设置页面最外层布局 FitsSystemWindows 属性
@@ -166,7 +164,7 @@ public class BaseActivity extends AppCompatActivity implements IActivity, EasyPe
         LinearLayout content_linear = (LinearLayout) this.findViewById(R.id.content_view);
         content_linear.addView(View.inflate(this, layoutResID, null), new LinearLayout.LayoutParams(-1, -1));
     }
-//
+    //
     public void initTitleBar() {
         mTitleView = (TextView) findViewById(R.id.sec_title_tv);
         mLeftBtn = (ImageView) findViewById(R.id.title_left_img);
@@ -288,13 +286,13 @@ public class BaseActivity extends AppCompatActivity implements IActivity, EasyPe
     protected static final int RC_PERM = 123;
 
     protected static int reSting = R.string.ask_again;//默认提示语句
-    private CheckPermListener mListener;
+    private com.pdscjxy.serverapp.activity.base.BaseActivity.CheckPermListener mListener;
 
     public interface CheckPermListener {
         //权限通过后的回调方法
         void superPermission();
     }
-    public void checkPermission(CheckPermListener listener, int resString, String... mPerms) {
+    public void checkPermission(com.pdscjxy.serverapp.activity.base.BaseActivity.CheckPermListener listener, int resString, String... mPerms) {
         mListener = listener;
         if (EasyPermissions.hasPermissions(this, mPerms)) {
             if (mListener != null)
@@ -373,7 +371,7 @@ public class BaseActivity extends AppCompatActivity implements IActivity, EasyPe
 //            fragment.startActivityForResult(intent, REQUEST_CODE_CALLBACK);
 //        } else {
 //            ((UIBaseActivity)activity).isSkip = true;
-            startActivityForResult(intent, REQUEST_CODE_CALLBACK);
+        startActivityForResult(intent, REQUEST_CODE_CALLBACK);
 //        }
         enterAnimation();
     }
