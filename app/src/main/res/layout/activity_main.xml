@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context="com.pdscjxy.serverapp.MainActivity">
+
+    <ImageView
+        android:background="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_130"
+        android:text="Hello World!" />
+
+    <TextView
+        android:textSize="@dimen/sp_26"
+        android:layout_marginTop="@dimen/dp_70"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#E32906"
+        android:text="有订单来了！"/>
+
+    <TextView
+        android:id="@+id/tv_look"
+        android:textSize="@dimen/sp_14"
+        android:layout_marginTop="@dimen/dp_70"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        android:paddingTop="@dimen/dp_5"
+        android:paddingBottom="@dimen/dp_5"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:background="@color/color_53B890"
+        android:text="点击查看"/>
+
+
+
+</LinearLayout>

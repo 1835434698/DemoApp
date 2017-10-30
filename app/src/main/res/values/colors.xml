@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="transparent">#00000000</color>
+    <color name="comm_press_color">#44000000</color>
+
+    <color name="color_2772FF">#2772FF</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_E5E5E5">#E5E5E5</color>
+
+
+
+    <color name="color_EAEAEA">#EAEAEA</color>
+    <color name="color_EDEDED">#EDEDED</color>
+    <color name="color_E32906">#E32906</color>
+    <color name="color_53B890">#53B890</color>
+    <color name="color_E8421F">#E8421F</color>
+    <color name="color_F3783F">#F3783F</color>
+    <color name="color_438E9F">#438E9F</color>
+    <color name="color_7DC5CB">#7DC5CB</color>
+    <color name="color_D2D2D1">#D2D2D1</color>
+    <color name="color_A2A2A5">#A2A2A5</color>
+    <color name="color_737270">#737270</color>
+    <color name="color_72B8BF">#72B8BF</color>
+    <color name="color_D26636">#D26636</color>
+
+
+    <color name="color_1184fa">#1184fa</color>
+    <color name="color_D779baa">#779baa</color>
+
+
+</resources>

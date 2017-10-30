@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+
+
+
+    <LinearLayout
+        android:id="@+id/ll_bg"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="0dp"
+        android:layout_weight="8"
+        android:paddingTop="@dimen/dp_6"
+        android:paddingBottom="@dimen/dp_6"
+        android:layout_height="wrap_content">
+        <!--android:background="@drawable/rectangle_three"-->
+
+        <TextView
+            android:id="@+id/tv_no"
+            style="@style/detail_text_two"
+            android:layout_marginLeft="@dimen/dp_2"
+            android:layout_weight="1"
+            android:text="1"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/detail_text_two"
+            android:layout_weight="7"
+            android:text="东北大拌菜"/>
+
+        <TextView
+            android:id="@+id/tv_number"
+            style="@style/detail_text_two"
+            android:layout_weight="5"
+            android:text="1份"/>
+
+        <TextView
+            android:id="@+id/tv_price"
+            style="@style/detail_text_two"
+            android:layout_weight="3"
+            android:text="$18"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/tv_gg"
+            style="@style/detail_text_three"
+            android:textColor="@color/color_F3783F"
+            android:padding="@dimen/dp_2"
+            android:background="@drawable/rectangle_two"
+            android:text="更改"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

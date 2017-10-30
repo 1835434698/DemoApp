@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/base_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:id="@+id/included_title"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_blue_bright"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dp_25"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40">
+
+            <ImageView
+                android:id="@+id/title_left_img"
+                android:layout_width="28.4dp"
+                android:layout_height="36dp"
+                android:padding="8dp"
+                android:layout_marginLeft="7dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back_translation"/>
+            <TextView
+                android:layout_centerInParent="true"
+                android:id="@+id/sec_title_tv"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_15"
+                android:text="这是标题"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/content_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/included_title"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FixedRatioImageView">
+        <attr name="ratio" format="float" />
+        <attr name="orientation" format="integer" />
+    </declare-styleable>
+
+
+    <string-array name="selectPicture" translatable="false">
+        <item>拍照</item>
+        <item>相册</item>
+        <item>取消</item>
+    </string-array>
+</resources>

@@ -1,0 +1,125 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+<!--</style>-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+        <item name="android:windowTranslucentStatus">true</item>    <!--状态栏为透明,如果设置为false，则没有黑色条盖住，见下图对比-->
+        <item name="android:windowTranslucentNavigation">true</item> <!--导航栏为透明-->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+
+    <style name="CustomDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+    <style name="CustomProgressDialog" parent="@style/CustomDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+
+    <style name="order_text_one">
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <style name="order_text_two">
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:textColor">@color/color_E8421F</item>
+    </style>
+    <style name="order_text_three">
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/color_737270</item>
+        <item name="android:layout_marginLeft">@dimen/dp_15</item>
+    </style>
+    <style name="order_text_four">
+        <item name="android:textSize">@dimen/sp_14</item>
+    </style>
+    <style name="order_text_five">
+        <item name="android:textSize">@dimen/sp_13</item>
+    </style>
+    <style name="order_text_six" parent="order_text_five">
+        <item name="android:textColor">@color/color_438E9F</item>
+    </style>
+    <style name="order_text_seven" parent="order_text_five">
+        <item name="android:textColor">@color/color_F3783F</item>
+    </style>
+    <style name="order_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_1</item>
+        <item name="android:layout_marginLeft">@dimen/dp_15</item>
+        <item name="android:background">@color/color_7DC5CB</item>
+    </style>
+    <style name="order_line_1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_1</item>
+        <item name="android:layout_marginLeft">@dimen/dp_15</item>
+        <item name="android:background">@color/color_D2D2D1</item>
+    </style>
+    <style name="order_line_2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_1</item>
+        <item name="android:layout_marginLeft">@dimen/dp_10</item>
+        <item name="android:background">@color/color_D2D2D1</item>
+    </style>
+    <style name="order_view_one">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_8</item>
+        <item name="android:background">@color/color_EAEAEA</item>
+    </style>
+    <style name="order_view_two">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_12</item>
+        <item name="android:background">@color/color_EAEAEA</item>
+    </style>
+    <style name="vertical_line">
+        <item name="android:layout_width">@dimen/dp_1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/color_EDEDED</item>
+    </style>
+
+    <style name="detail_text_one">
+        <item name="android:textSize">@dimen/sp_20</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+    <style name="detail_text">
+        <item name="android:textSize">@dimen/sp_11</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="detail_text_two" parent="detail_text">
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="detail_text_three" parent="detail_text">
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+    <style name="detail_text_four">
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="detail_text_five" parent="detail_text_four">
+        <item name="android:textColor">@color/color_F3783F</item>
+    </style>
+
+
+</resources>
