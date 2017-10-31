@@ -27,13 +27,13 @@ public class BaseFragment  extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         root = inflater.inflate(R.layout.fragment_base, null);
-        unbinder = ButterKnife.bind(this,root);
         return root;
     }
 
     public void setView(int layoutResID) {
         LinearLayout content_linear = (LinearLayout) root.findViewById(R.id.fragment_content_view);
         content_linear.addView(View.inflate(getActivity(), layoutResID, null), new LinearLayout.LayoutParams(-1, -1));
+        unbinder = ButterKnife.bind(this,root);
     }
 
     @Override
