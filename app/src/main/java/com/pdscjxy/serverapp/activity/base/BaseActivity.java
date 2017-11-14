@@ -294,13 +294,31 @@ public class BaseActivity extends AppCompatActivity implements IActivity, EasyPe
     }
     public void checkPermission(com.pdscjxy.serverapp.activity.base.BaseActivity.CheckPermListener listener, int resString, String... mPerms) {
         mListener = listener;
-        if (EasyPermissions.hasPermissions(this, mPerms)) {
+        List<String> list = new ArrayList<>();
+        for (String item: mPerms) {
+            if (!EasyPermissions.hasPermissions(this, item)) {
+                list.add(item);
+            }
+        }
+        int length = list.size();
+        if (length>0){
+            String[] perms = new String[list.size()];
+            for (int i = 0; i<length; i++){
+                perms[i] = list.get(i);
+            }
+            EasyPermissions.requestPermissions(this, getString(resString),
+                    RC_PERM, perms);
+        }else {
             if (mListener != null)
                 mListener.superPermission();
-        } else {
-            EasyPermissions.requestPermissions(this, getString(resString),
-                    RC_PERM, mPerms);
         }
+//        if (EasyPermissions.hasPermissions(this, mPerms)) {
+//            if (mListener != null)
+//                mListener.superPermission();
+//        } else {
+//            EasyPermissions.requestPermissions(this, getString(resString),
+//                    RC_PERM, mPerms);
+//        }
     }
 
     @Override

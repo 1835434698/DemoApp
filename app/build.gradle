@@ -4,7 +4,9 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
-        applicationId "com.pdscjxy.serverapp"
+        applicationId "com.pdscjxy.clientapp"
+//        applicationId "com.amap.map2d.demo"
+//        applicationId "com.pdscjxy.serverapp"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
@@ -22,11 +24,24 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
-    compile 'com.jakewharton:butterknife:8.8.1'// ButterKnife标注
+    compile 'com.jakewharton:butterknife:8.8.1'
+    // ButterKnife标注
     compile 'com.jakewharton:butterknife-compiler:8.8.1'
-    compile 'io.reactivex:rxandroid:1.1.0'
-    // RxAndroid
-    compile 'io.reactivex:rxjava:1.1.0'
-    // 推荐同时加载RxJava
+    compile 'com.jakewharton.rxbinding:rxbinding:1.0.1'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //    compile 'io.reactivex:rxandroid:1.1.0'
+    //    // RxAndroid
+    compile 'io.reactivex.rxjava2:rxjava:2.1.6'
+    //    compile 'io.reactivex:rxjava:1.1.0'
+    //    // 推荐同时加载RxJava
     compile project(':httpmanagerlib')
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //    compile 'in.srain.cube:ultra-ptr:1.0.11'
+    compile 'in.srain.cube:ptr-load-more:1.0.5'
+
+    compile 'com.hyman:flowlayout-lib:1.1.2'
+    compile files('libs/pinyin4j-2.5.0.jar')
+    compile 'com.amap.api:map2d:5.2.0'
+    compile 'com.amap.api:search:5.0.0'
+    compile 'com.amap.api:location:3.3.0'
 }

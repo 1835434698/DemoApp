@@ -12,7 +12,7 @@ public class Toasts {
     public static void showToastLong(String msg){
         showToast(msg, Toast.LENGTH_LONG);
     }
-    public static void showToastShort(String msg, int time){
+    public static void showToastShort(String msg){
         showToast(msg, Toast.LENGTH_SHORT);
     }
     private static void showToast(String msg, int time){
