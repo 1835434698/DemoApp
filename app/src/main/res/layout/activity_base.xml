@@ -3,15 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF">
+    <View
+        android:id="@+id/view_status_bar_place"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"/>
 
     <LinearLayout
+        android:layout_below="@id/view_status_bar_place"
         android:id="@+id/included_title"
         android:orientation="horizontal"
         android:background="@android:color/holo_blue_bright"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
-            android:layout_marginTop="@dimen/dp_25"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_40">
 

@@ -42,21 +42,21 @@
             android:name="com.amap.api.v2.apikey"
             android:value="be7603ba6b21fa710f10f124dadab333" />
         <activity android:name=".activity.WelcomeActivity" >
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        </activity>
-
-        <activity
-            android:name=".activity.MapActivity"
-            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.MapActivity"
+            android:screenOrientation="portrait" >
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".MainActivity"
