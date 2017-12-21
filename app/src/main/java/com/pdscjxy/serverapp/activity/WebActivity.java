@@ -52,6 +52,7 @@ public class WebActivity extends BaseActivity {
         super.onCreate(bundle);
         setContentView(R.layout.h5_web_activity);
         initView(getIntent());
+        initSetting();
         loadUrl(webUrl);
 
         String[] menu = getResources().getStringArray(R.array.selectPicture);
@@ -99,6 +100,30 @@ public class WebActivity extends BaseActivity {
 //        res.updateConfiguration(config, res.getDisplayMetrics() );
 //        return res;
 //    }
+
+    private void initSetting() {
+//        webView = findViewById(R.id.webView);
+//        loadVg = findViewById(R.id.load);
+//        loadIv = findViewById(R.id.load_img);
+//        loadTv = findViewById(R.id.load_text);
+//
+//        webView.requestFocusFromTouch();
+//        webView.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
+//        WebSettings settings = webView.getSettings();
+//        settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+//        settings.setUseWideViewPort(false);
+//        settings.setJavaScriptEnabled(true);
+//        settings.setDomStorageEnabled(true);
+//        settings.setAllowContentAccess(true);
+//        settings.setJavaScriptCanOpenWindowsAutomatically(true);
+//        settings.setSaveFormData(true);
+//        settings.setAllowFileAccess(true);
+//        settings.setAppCacheEnabled(true);
+//        settings.setDatabaseEnabled(true);
+//        settings.setLoadWithOverviewMode(true);
+//        settings.setLoadsImagesAutomatically(true);
+//        settings.setUserAgentString(settings.getUserAgentString() + "/androidH5App");
+    }
 
     private void setLeftIv(boolean isShow){
         setLeftShow(isShow);
