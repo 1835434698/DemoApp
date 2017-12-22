@@ -1,8 +1,12 @@
 package com.pdscjxy.serverapp;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,6 +48,52 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
+
+
+    private void update( JSONObject data) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(
+                this);
+        builder.setMessage("data.versionContent");
+        builder.setTitle("版本更新");
+        builder.setPositiveButton("更新",
+                new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog,
+                                        int which) {
+//                        if(!PrefUtils.getPrefString(MainActivity.this, "newAppVersion", "").equals(data.newAppVersion)) {
+//                            PrefUtils.setPrefString(MainActivity.this, "newAppVersion", data.newAppVersion);
+//                        }
+                        // TODO Auto-generated method stub
+                        Intent intent = new Intent();
+                        intent.setAction("android.intent.action.VIEW");
+                        Uri content_url = Uri.parse("data.appURL");
+                        intent.setData(content_url);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+        builder.setNegativeButton("取消",
+                new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog,
+                                        int which) {
+
+                    }
+                });
+        builder.setOnKeyListener(new DialogInterface.OnKeyListener() {
+            @Override
+            public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                }
+                return false;
+            }
+        });
+        builder.show();
+    }
+
+
 
 
     private OkHttpManager.ResponseListener listener = new OkHttpManager.ResponseListener() {

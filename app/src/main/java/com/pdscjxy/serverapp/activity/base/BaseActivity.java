@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -94,9 +95,13 @@ public class BaseActivity extends AppCompatActivity implements IActivity, EasyPe
     private View mViewStatusBarPlace;
 
 
+    private Activity activity;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        activity = this;
+        super.setContentView(R.layout.activity_base);
         overridePendingTransition(R.anim.activity_right_in, R.anim.activity_right_out);
     }
 
@@ -110,7 +115,6 @@ public class BaseActivity extends AppCompatActivity implements IActivity, EasyPe
     @Override
     public void setContentView(int layoutResID) {
         // TODO Auto-generated method stub
-        super.setContentView(R.layout.activity_base);
         mViewStatusBarPlace = findViewById(R.id.view_status_bar_place);
         if (layoutResID < 0) {
             return;
@@ -285,6 +289,22 @@ public class BaseActivity extends AppCompatActivity implements IActivity, EasyPe
     public void setView(int layoutResID) {
         LinearLayout content_linear = (LinearLayout) this.findViewById(R.id.content_view);
         content_linear.addView(View.inflate(this, layoutResID, null), new LinearLayout.LayoutParams(-1, -1));
+
+        initAllViewForActivity(content_linear);
+
+    }
+
+    private void initAllViewForActivity(final ViewGroup vg) {
+        vg.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @SuppressWarnings("deprecation")
+            @Override
+            public void onGlobalLayout() {
+                vg.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                if (activity != null && activity instanceof IActivity) {
+                    ((IActivity) activity).onActivityFirstLayout();
+                }
+            }
+        });
     }
     //
     public void initTitleBar() {
